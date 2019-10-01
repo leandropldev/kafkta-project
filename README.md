@@ -9,15 +9,18 @@ Kafka Instalation and Instructions
 5) config zookeeper.properties - set darDir patch to a previous created new folder
 6) config server.properties - set log.dirs patch to a previous created new folter
 7) config server.properties - add new lines under "############################# Internal Topic Settings  #############################"
+	
 	offsets.topic.num.partitions=1
 	offsets.topic.replication.factor=1
 	transaction.state.log.replication.factor=1
 	transaction.state.log.min.isr=1
 	min.insync.replicas=1
 	default.replication.factor=1
+	
 8) add the directy tree to the patch variable - "c:\... \kafka_2.12-2.3.0\bin\windows"
 
 **** commands ****
+
 Run zookeeper
 zookeeper-server-start.bat C:\Users\lnoguere\Documents\kafka_2.12-2.3.0\config\zookeeper.properties
 
