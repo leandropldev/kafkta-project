@@ -13,13 +13,9 @@ import br.com.leandro.kafka.models.SimpleModel;
 @RequestMapping("/api/kafka-producer")
 public class KafkaController {
 	
-	private KafkaTemplate<String, SimpleModel> kafkaTemplate;
-	
 	@Autowired
-	public KafkaController(KafkaTemplate<String, SimpleModel> kafkaTemplate) {
-		this.kafkaTemplate = kafkaTemplate;
-	}
-	
+	private KafkaTemplate<String, SimpleModel> kafkaTemplate;
+
 	@PostMapping
 	public void post(@RequestBody SimpleModel model) {
 		kafkaTemplate.send("myTopic", model);
